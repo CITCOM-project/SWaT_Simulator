@@ -1,4 +1,6 @@
 from logicblock.logicblock import ALM
+
+
 class HMI_plant:
     def __init__(self):
         self.Reset_On = 1
@@ -56,8 +58,9 @@ class HMI_ReverseOsmosis_Cycle:
         self.FLUSHING_MIN_SP = 2  # temporarily set to this value
         self.RO_HIGH_PUMP_Shutdown = 0
         self.SD_FLUSHING_DONE_On = 0
-        self.RO_SD_FLUSHING =0
-        self.RO_SD_FLUSHING_MIN=0
+        self.RO_SD_FLUSHING = 0
+        self.RO_SD_FLUSHING_MIN = 0
+
 
 class HMI_mv:
     def __init__(self):
@@ -77,7 +80,9 @@ class HMI_pump:
     def __init__(self):
         self.Auto = 1
         self.Permissive = [1] * 32
-        self.MSG_Permissive = [0] * 6  # Actually values [1-5] is needed, but for expressiveness, we difine from [0-5]
+        self.MSG_Permissive = [
+            0
+        ] * 6  # Actually values [1-5] is needed, but for expressiveness, we difine from [0-5]
         self.SD = [0] * 32
         self.MSG_Shutdown = [0] * 6
         self.Reset = 0
@@ -122,11 +127,14 @@ class HMI_LIT:
         self.AL = 0
         self.ALL = 0
         self.Pv = 0
+
     def set_alarm(self):
-        if type(self.Pv) != type('a'):
-            self.AHH, self.AH, self.AL, self.ALL = ALM(self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL)
+        if type(self.Pv) != type("a"):
+            self.AHH, self.AH, self.AL, self.ALL = ALM(
+                self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL
+            )
         else:
-            print (self.Pv)
+            print(self.Pv)
 
 
 class HMI_FIT:
@@ -143,9 +151,12 @@ class HMI_FIT:
         self.ALL = 0
         self.Totaliser = 0
         self.Pv = 0
+
     def set_alarm(self):
-        if type(self.Pv) != type('a'):
-            self.AHH, self.AH, self.AL, self.ALL = ALM(self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL)
+        if type(self.Pv) != type("a"):
+            self.AHH, self.AH, self.AL, self.ALL = ALM(
+                self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL
+            )
 
 
 class HMI_duty2:
@@ -166,10 +177,14 @@ class HMI_ait:
         self.AH = 0
         self.AL = 0
         self.ALL = 0
-        self.Pv=0
+        self.Pv = 0
+
     def set_alarm(self):
-        if type(self.Pv) != type('a'):
-            self.AHH, self.AH, self.AL, self.ALL = ALM(self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL)
+        if type(self.Pv) != type("a"):
+            self.AHH, self.AH, self.AL, self.ALL = ALM(
+                self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL
+            )
+
 
 class HMI_PSH:
     def __init__(self):
@@ -213,9 +228,13 @@ class HMI_DPIT:
         self.AL = 0
         self.ALL = 0
         self.Pv = 0
+
     def set_alarm(self):
-        if type(self.Pv) != type('a'):
-            self.AHH, self.AH, self.AL, self.ALL = ALM(self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL)
+        if type(self.Pv) != type("a"):
+            self.AHH, self.AH, self.AL, self.ALL = ALM(
+                self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL
+            )
+
 
 class HMI_UV:
     def __init__(self):
@@ -245,9 +264,13 @@ class HMI_PIT:
         self.AL = 0
         self.ALL = 0
         self.Pv = 0
+
     def set_alarm(self):
-        if type(self.Pv) != type('a'):
-            self.AHH, self.AH, self.AL, self.ALL = ALM(self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL)
+        if type(self.Pv) != type("a"):
+            self.AHH, self.AH, self.AL, self.ALL = ALM(
+                self.Pv, self.SAHH, self.SAH, self.SAL, self.SALL
+            )
+
 
 class HMI_VSD:
     def __init__(self):
@@ -269,6 +292,3 @@ class HMI_VSD:
         self.Speed = 0
         self.Drive_Ready = 0
         self.Shutdown = [0] * 32
-
-
-

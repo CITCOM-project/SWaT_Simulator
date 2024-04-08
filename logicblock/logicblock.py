@@ -1,5 +1,7 @@
 import inspect
 import types
+
+
 class switch(object):
     value = None
 
@@ -14,13 +16,14 @@ def case(*args):
 
 # class switch and func case are to create the case statement which python doesn't provide
 
+
 def SETD(a, b, c):
     if b == 1:  # if unset is set, must stop
         return 0
     elif a == 1:  # else if set is set, can run
         return 1
     # if a == 1 and b == 1:
-    #	print "Error: SETD input cannot be 1 and 1"
+    # 	print "Error: SETD input cannot be 1 and 1"
     else:  # if neither is set, keep current state
         return c
 
@@ -44,8 +47,8 @@ def SETD(a, b, c):
 # 		a = 0
 # 	return a,b,c,d
 
-def ALM(in_val, a_hh, a_h, a_l, a_ll):
 
+def ALM(in_val, a_hh, a_h, a_l, a_ll):
     if in_val < a_ll:
         d = 1
     else:
@@ -117,6 +120,7 @@ def signed_integer_2_bit(value):
         a[i] = value % 2
         value = value - value
     return a
+
 
 # def signed_integer_2_bit(value):
 # 	a = [1] * 32
